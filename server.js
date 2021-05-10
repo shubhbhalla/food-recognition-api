@@ -43,6 +43,6 @@ app.put('/fooditem', (req, res) => foodItem.handlePut(req, res, database));
 
 app.post('/apicall', apiCall.handlePost);
 
-app.listen(3000, () => {
+app.listen(process.env.PORT, () => {
   console.log('running');
 });
