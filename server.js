@@ -13,10 +13,10 @@ const apiCall = require('./EndPointFunctions/apicall.js');
 const database = knex({
   client: 'pg',
   connection: {
-    host: '127.0.0.1',
-    user: 'shubh01',
-    password: '',
-    database: 'food-recognition-database',
+    host: process.env.DATABASE_URL,
+    ssl: {
+      rejectUnauthorized: false,
+    },
   },
 });
 
