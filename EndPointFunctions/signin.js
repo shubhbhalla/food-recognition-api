@@ -9,7 +9,7 @@ const handlePost = (req, res, bcrypt, database) => {
     .where({ email: email.toLowerCase() })
     .select('hash')
     .then((hashedPassword) => {
-      if (!hashedPassword.length) return es.status(400).json('No Such Email');
+      if (!hashedPassword.length) return res.status(400).json('No Such Email');
 
       const validPassword = bcrypt.compareSync(
         password,
