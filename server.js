@@ -29,6 +29,10 @@ app.get('/', (req, res) => {
   res.json('This route is customizable!');
 });
 
+app.get('/start-server', (req, res) => {
+  res.json('Server has successfully started!');
+});
+
 app.post('/signin', (req, res) => {
   signIn.handlePost(req, res, bcrypt, database);
 });
